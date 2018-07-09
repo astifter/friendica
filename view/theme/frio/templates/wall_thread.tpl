@@ -78,7 +78,7 @@ as the value of $top_child_total (this is done at the end of this file)
 <span class="created" style="display: none;">{{$item.created_date}}</span>
 <span class="id" style="display: none;">{{$item.id}}</span>
 {{/if}}
-	<div class="media">
+	<div class="wall-item-container-header thread_level_{{$item.thread_level}}">
 		{{* Put addional actions in a top-right dropdown menu *}}
 
 		<ul class="nav nav-pills preferences">
@@ -194,7 +194,6 @@ as the value of $top_child_total (this is done at the end of this file)
 
 
 		{{* contact info header*}}
-		{{if $item.thread_level==1}}
 		<div role="heading " aria-level="{{$item.thread_level}}" class="contact-info hidden-sm hidden-xs media-body"><!-- <= For computer -->
 			<h4 class="media-heading"><a href="{{$item.profile_url}}" title="{{$item.linktitle}}" class="wall-item-name-link userinfo"><span class="wall-item-name {{$item.sparkle}}">{{$item.name}}</span></a>
 			{{if $item.owner_url}}{{$item.via}} <a href="{{$item.owner_url}}" target="redir" title="{{$item.olinktitle}}" class="wall-item-name-link userinfo"><span class="wall-item-name {{$item.osparkle}}" id="wall-item-ownername-{{$item.id}}">{{$item.owner_name}}</span></a>{{/if}}
@@ -224,25 +223,10 @@ as the value of $top_child_total (this is done at the end of this file)
 				</p>
 			</h5>
 		</div>
-		{{/if}} {{* End of if $item.thread_level==1 *}}
-
-		{{* contact info header for comments *}}
-		{{if $item.thread_level!=1}}
-		<div class="media-body">{{*this is the media body for comments - this div must be closed at the end of the file *}}
-		<div role="heading " aria-level="{{$item.thread_level}}" class="contact-info-comment">
-			<h5 class="media-heading">
-				<a href="{{$item.profile_url}}" title="{{$item.linktitle}}" class="wall-item-name-link userinfo"><span class="fakelink">{{$item.name}}</span></a>
-				<span class="text-muted">
-					<small><a class="time" href="{{$item.plink.orig}}" title="{{$item.localtime}}" data-toggle="tooltip">{{$item.ago}}</a> {{if $item.location}}&nbsp;&mdash;&nbsp;({{$item.location}}){{/if}}</small>
-				</span>
-			</h5>
-		</div>
-		{{/if}}
-
+		<div class="clear"></div>
+	</div>
+	<div class="wall-item-container-body">
 		<div class="clearfix"></div>
-
-		{{* Insert Line to seperate item header and item content visually *}}
-		{{if $item.thread_level==1}}<hr />{{/if}}
 
 		{{* item content *}}
 		<div class="wall-item-content {{$item.type}}" id="wall-item-content-{{$item.id}}">
@@ -361,12 +345,6 @@ as the value of $top_child_total (this is done at the end of this file)
 				{{/foreach}}
 			</div>
 		{{/if}}
-
-		{{if $item.thread_level!=1}}
-		</div><!--./media-body from for comments-->
-		<hr />
-		{{/if}}
-
 
 		{{* Insert comment box of threaded children *}}
 		{{if $item.threaded}}{{if $item.comment}}{{if $item.indent==comment}}

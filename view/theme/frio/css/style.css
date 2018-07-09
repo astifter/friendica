@@ -1486,18 +1486,13 @@ section #jotOpen {
 */
 .panel {
     border: none;
-    /*background-color: #fff;*/
-    background-color: rgba(255,255,255,$contentbg_transp);
-    box-shadow: 0 0 3px #dadada;
-    -webkit-box-shadow: 0 0 3px #dadada;
-    -moz-box-shadow: 0 0 3px #dadada;
+    background-color: #fff;
     border-radius: 4px;
     position: relative;
 }
 .panel.panel-inline {
     margin-left: -15px;
     margin-right: -15px;
-    margin-top: 15px;
     padding: 15px;
 }
 .panel .panel-body {
@@ -1543,8 +1538,30 @@ section #jotOpen {
 }
 
 /* wall items */
-.wall-item-container {
+.tread-wrapper {
+    background-color: #ededed;
+}
+.contact-info-xs {
+    overflow: auto;
+}
+.wall-item-container-header.thread_level_1 {
+    border-radius: 4px;
+    padding: 15px 15px 15px 15px;
+    background-color: #f5f5f5;
+}
+.wall-item-container-header {
+    padding-bottom: 15px;
+}
+.wall-item-container-body {
+    padding: 0px 15px 15px 15px;
+    overflow: auto;
+}
+.wall-item-container.thread_level_1 {
     position: relative;
+    margin-bottom: 15px;
+    background: white;
+    padding: 0px;
+    border-radius: 4px;
 }
 
 /* wall items contact photo */
@@ -1604,9 +1621,9 @@ section #jotOpen {
 
 /* wall items action dropdown menu */
 .nav-pills.preferences {
-    position: absolute;
     right: 15px;
     top: 10px;
+    float: right;
 }
 .comment .nav-pills.preferences {
     right: 0px;
@@ -1630,6 +1647,9 @@ section #jotOpen {
 }
 .media .contact-info-comment {
     display: table-cell;
+}
+.contact-info.media-body {
+    margin-left: 10px;
 }
 .media .contact-info-xs h5,
 .media .contact-info-comment {
