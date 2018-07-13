@@ -1,5 +1,5 @@
 <div id="profile-page" class="generic-page-wrapper">
-	<h3 class="">{{$title}}</h3>
+	<h3 class="pull-left">{{$title}}</h3>
 
 	{{* The link to edit the profile*}}
 	{{if $profile.edit}}

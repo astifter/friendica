@@ -1,29 +1,28 @@
+<h3 id="photo-album-title" class="pull-left">{{$album}}</h3>
+{{if $can_post}}
+<a class="pull-right" href="{{$upload.1}}">
+<i class="heading-icon-padding faded-icon-padding faded-icon fa fa-upload" aria-hidden="true"></i><span class="sr-only">{{$upload.0}}</span>
+</a>
+{{/if}}
+{{if $edit}}
+<a class="pull-right" href="{{$edit.1}}">
+<i class="heading-icon-padding faded-icon-padding faded-icon fa fa-pencil" aria-hidden="true"></i><span class="sr-only">{{$edit.0}}</span>
+</a>
+{{/if}}
+{{if $can_post}}
+<a class="pull-right" href="{{$order.1}}">
+<i class="heading-icon-padding faded-icon-padding faded-icon fa fa-sort" aria-hidden="true"></i><span class="sr-only">{{$order.0}}</span>
+</a>
+{{/if}}
 
-<div class="generic-page-wrapper">
+<div class="clear"></div>
 
-	<h3 id="photo-album-title">{{$album}}</h3>
+{{foreach $photos as $photo}}
+	{{include file="photo_top.tpl"}}
+{{/foreach}}
 
-	<div class="photo-album-actions">
-	{{if $can_post}}
-		<a class="photos-upload-link" href="{{$upload.1}}">{{$upload.0}}</a>
-		{{/if}}
-		{{if $can_post && $edit}}<span role="presentation" class="separator">&nbsp;•&nbsp;</span>{{/if}}
-		{{if $edit}}
-		<a id="album-edit-link" href="{{$edit.1}}" title="{{$edit.0}}">{{$edit.0}}</a>
-		{{/if}}
-		<a class="photos-order-link" href="{{$order.1}}" title="{{$order.0}}">{{$order.0}}</a>
-	</div>
-	<div class="clear"></div>
+<div class="photo-album-end"></div>
 
-	<div class="photo-album-wrapper" id="photo-album-contents">
-	{{foreach $photos as $photo}}
-		{{include file="photo_top.tpl"}}
-	{{/foreach}}
-	</div>
-
-	<div class="photo-album-end"></div>
-
-	{{$paginate}}
-</div>
+{{$paginate}}
 
 <script type="text/javascript">$(document).ready(function() { loadingPage = false; justifyPhotos('photo-album-contents-{{$album_id}}'); });</script>

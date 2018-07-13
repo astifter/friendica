@@ -1231,25 +1231,27 @@ div#sidebar-group-list {
 .group-new-form {
     clear: both;
 }
-
 .group-edit-tool {
     color: #555;
 }
-aside #group-sidebar .group-edit-tool,
-aside #saved-search-list .savedsearchdrop {
-    opacity: 0.1;
-    transition: all 0.25s ease-in-out;
+
+.heading-icon-padding {
+    margin-top: 20px;
 }
-aside #group-sidebar .group-edit-tool:hover,
-aside #saved-search-list .saved-search-li:hover .savedsearchdrop {
+.faded-icon-padding {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.faded-icon {
     color: #555;
-    opacity: 0.8;
-    transition: all 0.25s ease-in-out;
+    opacity: 0.3
 }
-aside #group-sidebar .sidebar-group-li .group-edit-tool:hover,
-aside #saved-search-list .saved-search-li .savedsearchdrop:hover {
-    opacity: 1;
+.faded-icon:hover {
+    color: #555;
+    opacity: 0.9;
+    transition: all 0.1s ease-in-out;
 }
+
 aside #group-sidebar li .group-checkbox {
     margin: 0;
 }
@@ -2489,13 +2491,6 @@ ul li:hover .contact-wrapper .contact-action-link:hover {
     display: none;
 }
 
-/* photos */
-.photo-album-actions {
-    margin-bottom: 10px;
-}
-.photo-album-actions .photos-order-link {
-    float: right;
-}
 /* poke */
 #poke-desc {
     margin: 5px 0 30px;
