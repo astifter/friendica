@@ -14,7 +14,7 @@
 	{{/if}}
 
 	{{* Frio does split the profile information in "standard" and "advanced". This is the tab menu for swithching between this modes *}}
-	<ul id="profile-menu" class="nav nav-tabs" role="tablist">
+	<ul id="profile-menu" class="clear nav nav-tabs" role="tablist">
 		<li role="presentation" class="active">
 			<a href="#profile-content-standard" aria-controls="profile-content-standard" role="tab" data-toggle="tab">{{$basic}}</a>
 		</li>

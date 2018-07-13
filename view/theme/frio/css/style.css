@@ -869,7 +869,7 @@ nav.navbar a, nav.navbar .btn-link {
 .nav > li > .btn-link {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 0px 15px 0px 15px;
 }
 .nav > li > .btn-link:focus,
 .nav > li > .btn-link:hover {
@@ -890,7 +890,8 @@ nav.navbar a, nav.navbar .btn-link {
 .account .dropdown-menu,
 .contact-photo-wrapper .dropdown-menu {
     background-color: $nav_bg;
-    border: none
+    border: none;
+    min-width: 200px;
 }
 .nav-pills .dropdown-menu li.divider,
 .nav-tabs .dropdown-menu li.divider,
@@ -1091,21 +1092,20 @@ aside .vcard .tool .action{
     position: absolute;
     top:20px;
     right: 20px;
-    font-size: 32px;
-    width: 45px;
-    height: 45px;
-    background: rgba(0,0,0,.50);
+    width: 15px;
+    height: 15px;
+    background: white;
     text-align: center;
     border-radius: 3px;
     opacity: 0;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 aside .vcard .tool a {
-color: rgba(255,255,255,.85);
+    color: black;
 }
 aside .vcard #profile-photo-wrapper:hover .tool .action {
     opacity: 1;
@@ -1114,7 +1114,11 @@ aside .vcard #profile-photo-wrapper.crop-preview {
     padding: 0;
 }
 aside .vcard .profile-header {
-    margin-bottom: 20px;
+    margin-top: 10px;
+}
+aside .vcard .profile-header h3 {
+    margin-bottom: 0px;
+    padding-bottom: 5px;
 }
 aside .vcard .fn {
     font-size: 20px;
@@ -1139,15 +1143,12 @@ aside .vcard .icon {
     display: table-cell;
     padding-right: 10px;
 }
-#profile-extra-links {
-    margin-bottom: 20px;
+aside #profile-extra-links {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
-aside .vcard #dfrn-request-link-button,
-aside .vcard #wallmessage-link-botton {
-    width: 50%;
-    margin: 0 0 0 -5px;
-    float: left;
-    padding: 0 5px;
+aside .vcard #dfrn-request-link-button {
+    margin-bottom: 5px;
 }
 aside .vcard #dfrn-request-link,
 aside .vcard #wallmessage-link {
@@ -1512,6 +1513,9 @@ section #jotOpen {
 .tread-wrapper .media {
     overflow: visible;
     word-wrap: break-word;
+}
+.panel-body {
+    padding: 15px 0px 0px 0px;
 }
 
 /* Thread hover effects */

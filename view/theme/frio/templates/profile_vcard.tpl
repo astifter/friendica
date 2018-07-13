@@ -1,42 +1,28 @@
 <div class="vcard h-card widget">
 
 	{{if $profile.picdate}}
-		<div id="profile-photo-wrapper" class="thumbnail"><a href="{{$profile.url}}"><img class="photo u-photo" src="{{$profile.photo}}?rev={{$profile.picdate}}" alt="{{$profile.name}}" /></a>
+	<div id="profile-photo-wrapper"><a href="{{$profile.url}}"><img class="photo u-photo" src="{{$profile.photo}}?rev={{$profile.picdate}}" alt="{{$profile.name}}" /></a>
 	{{else}}
-		<div id="profile-photo-wrapper" class="thumbnail"><a href="{{$profile.url}}"><img class="photo u-photo" src="{{$profile.photo}}" alt="{{$profile.name}}" /></a>
+	<div id="profile-photo-wrapper"><a href="{{$profile.url}}"><img class="photo u-photo" src="{{$profile.photo}}" alt="{{$profile.name}}" /></a>
 	{{/if}}
-			<div class="tool visible-lg visible-md">
+		<div class="tool visible-lg visible-md">
 
-			{{if $profile.edit}}
-				<div class="action">
-					<a class="" href="{{$profile.edit.0}}" title="{{$profile.edit.3}}"><i class="fa fa-pencil-square-o"></i></a>
-				</div>
-			{{else}}
-				{{if $profile.menu}}
-					<div class="profile-edit-side-div"><a class="profile-edit-side-link icon edit" title="{{$editprofile}}" href="profiles" ></a></div>
-				{{/if}}
+		{{if $profile.edit}}
+			<div class="action">
+				<a class="" href="{{$profile.edit.0}}" title="{{$profile.edit.3}}" data-toggle="tooltip"><i class="faded-icon fa fa-pencil-square-o"></i></a>
+			</div>
+		{{else}}
+			{{if $profile.menu}}
+				<div class="profile-edit-side-div"><a class="profile-edit-side-link icon edit" title="{{$editprofile}}" href="profiles"></a></div>
 			{{/if}}
-			</div>
-
+		{{/if}}
 		</div>
 
-	{{* The short information which will appended to the second navbar by scrollspy *}}
-	<div id="vcard-short-info-wrapper" style="display: none;">
-		<div id="vcard-short-info" class="media" style="display: none">
-			<div id="vcard-short-photo-wrapper" class="pull-left">
-				<img class="media-object" src="{{$profile.photo}}" alt="{{$profile.name}}" />
-			</div>
-
-			<div id="vcard-short-desc" class="media-body">
-				<h4 class="media-heading">{{$profile.name}}</h4>
-				{{if $profile.addr}}<div class="vcard-short-addr">{{$profile.addr}}</div>{{/if}}
-			</div>
-		</div>
 	</div>
 
 	<div class="panel-body">
 		<div class="profile-header">
-			<div class="fn p-name">{{$profile.name}}</div>
+			<h3 class="fn p-name">{{$profile.name}}</h3>
 
 			{{if $profile.addr}}<div class="p-addr">{{$profile.addr}}</div>{{/if}}
 

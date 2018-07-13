@@ -10,7 +10,6 @@
 					<i class="fa fa-angle-down"  aria-hidden="true"></i>&nbsp;{{$profile_action}}
 				</button>
 				<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="profile-edit-links-dropdown">
-					<li role="presentation"><a role="menuitem" href="profile_photo" id="profile-photo_upload-link" title="{{$profpic|escape:'html'}}"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;{{$profpic}}</a></li>
 					<li role="presentation"><button role="menuitem" type="button" class="btn-link" id="profile-photo_upload-link-new" title="{{$profpic|escape:'html'}}" onclick="openClose('profile-photo-upload-section');"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;{{$profpic}}</button></li>
 					{{if ! $is_default}}
 					<li role="presentation" class="nav-item"><a role="menuitem" href="profperm/{{$profile_id}}" id="profile-edit-visibility-link" title="{{$editvis}}"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;{{$editvis}}</a>
