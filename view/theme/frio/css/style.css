@@ -419,14 +419,14 @@ header #banner #logo-img,
 .topbar ul.nav>li {
     float: left
 }
-@media (min-width: 992px) {
+@media (min-width: 991px) {
 .topbar ul.nav>li>a {
     padding-top: 15px;
     padding-bottom: 15px;
     line-height: 20px
 }
 }
-@media (max-width: 991px) {
+@media (max-width: 990px) {
     .topbar ul.nav>li>a { padding-left: 10px; padding-right: 10px; };
 }
 .topbar .dropdown-footer {
@@ -3274,7 +3274,7 @@ section .profile-match-wrapper {
 }
 
 /* Medium devices (desktops, 992px and up) */
-@media (min-width: 992px) {
+@media (min-width: 991px) {
     .mod-home.is-not-singleuser #content,
     .mod-login #content {
         margin-top: 100px!important;
