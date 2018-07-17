@@ -1592,8 +1592,8 @@ section #jotOpen {
     vertical-align: bottom;
 }
 .contact-photo-xs{
-    height: 38px;
-    width: 38px;
+    height: 20px;
+    width: 20px;
     border-radius: 3px;
 }
 .wwto .contact-photo {
@@ -1617,9 +1617,6 @@ section #jotOpen {
 .comment .nav-pills.preferences {
     right: 0px;
     top: 0px;
-}
-.wall-item-network {
-    font-size: 13px;
 }
 
 /* wall items contact info */
@@ -1861,11 +1858,15 @@ code > .hl-main {
     /*background-color: #ededed;*/
     background-color: rgba(237, 237, 237, $contentbg_transp);
     background-image: none;
-    margin-bottom: 1px;
+    margin-bottom: 5px;
 }
 .well-small {
-    padding: 10px;
+    padding: 9px;
     border-radius: 3px;
+}
+.well-small.wall-item-comment-wrapper {
+    padding: 5px 5px 0px 5px;
+    margin: 0px;
 }
 .well hr {
     margin: 15px 0 10px;
@@ -1975,8 +1976,11 @@ img.acpopup-img {
 .wall-item-container.thread_level_6,
 .wall-item-container.thread_level_7 {
   margin-left: 15px;
-
 }
+.avatar-picture {
+    margin-right: 10px;
+}
+
 /* Menubar Tabs */
 section > .tabbar-wrapper {
 /* The tabbar shouldn't' be visibile inside
@@ -2164,7 +2168,7 @@ ul.dropdown-menu li:hover {
  .suggest-content-wrapper, .common-content-wrapper, .help-content-wrapper,
 .allfriends-content-wrapper, .match-content-wrapper, .dirfind-content-wrapper,
 .directory-content-wrapper, .manage-content-wrapper, .notes-content-wrapper,
-.message-content-wrapper, .apps-content-wrapper, .photos-content-wrapper,
+.message-content-wrapper, .apps-content-wrapper,
 #adminpage, .delegate-content-wrapper, .uexport-content-wrapper,
 .viewcontacts-content-wrapper, .dfrn_request-content-wrapper,
 .friendica-content-wrapper, .credits-content-wrapper, .nogroup-content-wrapper,
@@ -2181,9 +2185,20 @@ ul.dropdown-menu li:hover {
     position: relative;
     /*overflow: hidden;*/
     color: #555;
-    box-shadow: 0 0 3px #dadada;
-    -webkit-box-shadow: 0 0 3px #dadada;
-    -moz-box-shadow: 0 0 3px #dadada;
+}
+
+.photos-content-wrapper {
+    min-height: calc(100vh - 150px);
+    padding: 15px 25px 15px 25px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border: none;
+    /*background-color: #fff;*/
+    background-color: rgba(255,255,255,$contentbg_transp);
+    border-radius: 4px;
+    position: relative;
+    /*overflow: hidden;*/
+    color: #555;
 }
 
 .section-title-wrapper {
@@ -2950,6 +2965,9 @@ section.help-content-wrapper li {
 #adminpage ul#addonslist, li.addon {
     list-style: none;
 }
+.pluginslist-reload {
+    margin-bottom: 15px;
+}
 #adminpage li .icon {
     display: inline-block;
     vertical-align: text-top;
@@ -3010,8 +3028,8 @@ section.help-content-wrapper li {
 .offset-anchor::before {
     display: block; 
     content: " "; 
-    margin-top: -100px; 
-    height: 100px;
+    margin-top: -110px; 
+    height: 110px;
     visibility: hidden; 
     pointer-events: none;
 }
@@ -3039,6 +3057,10 @@ main .nav-tabs>li.active>a:hover {
  */
 .modal hr {
     border-color: #eee;
+}
+
+.modal-open {
+    overflow-y: scroll;
 }
 
 /*

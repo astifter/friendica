@@ -24,7 +24,6 @@
 		</form>
 	</div>
 
-	<hr>
 	<div id="contacts-search-end"></div>
 
 	{{* we need the form container to make batch actions work *}}

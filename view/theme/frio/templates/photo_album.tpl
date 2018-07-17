@@ -1,4 +1,5 @@
 <h3 id="photo-album-title" class="pull-left">{{$album}}</h3>
+
 {{if $can_post}}
 <a class="pull-right" href="{{$upload.1}}">
 <i class="heading-icon-padding faded-icon-padding faded-icon fa fa-upload" aria-hidden="true"></i><span class="sr-only">{{$upload.0}}</span>

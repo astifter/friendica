@@ -1,9 +1,9 @@
 
 <div class="vcard widget h-card">
 	{{if $url}}
-		<div id="profile-photo-wrapper" class="thumbnail"><a class="u-url" href="{{$url}}"><img class="vcard-photo photo u-photo" src="{{$photo}}" alt="{{$name}}" /></a></div>
+		<div id="profile-photo-wrapper"><a class="u-url" href="{{$url}}"><img class="vcard-photo photo u-photo" src="{{$photo}}" alt="{{$name}}" /></a></div>
 	{{else}}
-		<div id="profile-photo-wrapper" class="thumbnail"><img class="vcard-photo photo u-photo" src="{{$photo}}" alt="{{$name}}" /></div>
+		<div id="profile-photo-wrapper"><img class="vcard-photo photo u-photo" src="{{$photo}}" alt="{{$name}}" /></div>
 	{{/if}}
 
 	{{* The short information which will appended to the second navbar by scrollspy *}}

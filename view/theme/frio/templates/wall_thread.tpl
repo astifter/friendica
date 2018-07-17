@@ -82,7 +82,6 @@ as the value of $top_child_total (this is done at the end of this file)
 		{{* Put addional actions in a top-right dropdown menu *}}
 
 		<ul class="nav nav-pills preferences">
-			<li><span class="wall-item-network" title="{{$item.app}}">{{$item.network_name}}</span></li>
 
 			{{if $item.plink || $item.drop.dropping || $item.edpost || $item.ignore || $item.tagger || $item.star || $item.filer || $item.subthread}}
 			<li class="dropdown">
@@ -151,7 +150,7 @@ as the value of $top_child_total (this is done at the end of this file)
 
 
 		{{* The avatar picture and the photo-menu *}}
-		<div class="dropdown pull-left"><!-- Dropdown -->
+		<div class="avatar-picture dropdown pull-left"><!-- Dropdown -->
 			{{if $item.thread_level==1}}
 			<div class="hidden-sm hidden-xs contact-photo-wrapper mframe{{if $item.owner_url}} wwfrom{{/if}} p-author h-card">
 				<a class="userinfo  u-url" id="wall-item-photo-menu-{{$item.id}}" href="{{$item.profile_url}}">
@@ -196,21 +195,39 @@ as the value of $top_child_total (this is done at the end of this file)
 		{{* contact info header*}}
 		{{if $item.thread_level==1}}
 		<div role="heading " aria-level="{{$item.thread_level}}" class="contact-info hidden-sm hidden-xs media-body"><!-- <= For computer -->
-			<h4 class="media-heading"><a href="{{$item.profile_url}}" title="{{$item.linktitle}}" class="wall-item-name-link userinfo"><span class="wall-item-name {{$item.sparkle}}">{{$item.name}}</span></a>
-			{{if $item.owner_url}}{{$item.via}} <a href="{{$item.owner_url}}" target="redir" title="{{$item.olinktitle}}" class="wall-item-name-link userinfo"><span class="wall-item-name {{$item.osparkle}}" id="wall-item-ownername-{{$item.id}}">{{$item.owner_name}}</span></a>{{/if}}
-			{{if $item.lock}}<span class="navicon lock fakelink" onClick="lockview(event,{{$item.id}});" title="{{$item.lock}}" data-toggle="tooltip">&nbsp;<small><i class="fa fa-lock" aria-hidden="true"></i></small></span>{{/if}}
+			
+			<h4 class="media-heading{{if $item.thread_level>1}} pull-left{{/if}}">
+				<a href="{{$item.profile_url}}" title="{{$item.linktitle}}" class="wall-item-name-link userinfo">
+					<span class="wall-item-name {{$item.sparkle}}">{{$item.name}}</span>
+				</a>
+				{{if $item.owner_url}}{{$item.via}} 
+				<a href="{{$item.owner_url}}" target="redir" title="{{$item.olinktitle}}" class="wall-item-name-link userinfo">
+					<span class="wall-item-name {{$item.osparkle}}" id="wall-item-ownername-{{$item.id}}">{{$item.owner_name}}</span>
+				</a>
+				{{/if}}
+				{{if $item.lock}}
+				<span class="navicon lock fakelink" onClick="lockview(event,{{$item.id}});" title="{{$item.lock}}" data-toggle="tooltip">
+					&nbsp;<small><i class="fa fa-lock" aria-hidden="true"></i></small>
+				</span>
+				{{/if}}
+				{{if $item.thread_level>1}}
+				&nbsp;
+				{{/if}}
 			</h4>
-
 			<div class="additional-info text-muted">
-				<div id="wall-item-ago-{{$item.id}}" class="wall-item-ago">
+				<div id="wall-item-ago-{{$item.id}}" class="pull-left wall-item-ago">
 					<small><a href="{{$item.plink.orig}}"><span class="time" title="{{$item.localtime}}" data-toggle="tooltip"><time class="dt-published" datetime="{{$item.localtime}}">{{$item.ago}}</time></span></a></small>
 				</div>
 
 				{{if $item.location}}
-				<div id="wall-item-location-{{$item.id}}" class="wall-item-location">
-					<small><span class="location">({{$item.location}})</span></small>
+				<div id="wall-item-location-{{$item.id}}" class="pull-left wall-item-location">
+					<small><span class="location">, {{$item.location}}</span></small>
 				</div>
 				{{/if}}
+
+				<div id="wall-item-network-{{$item.id}}" class="pull-left wall-item-network">
+					<small><span class="wall-item-network" title="{{$item.app}}">, {{$item.network_name}}</span></small>
+				</div>
 			</div>
 			{{* @todo $item.created have to be inserted *}}
 		</div>
@@ -224,6 +241,7 @@ as the value of $top_child_total (this is done at the end of this file)
 				</p>
 			</h5>
 		</div>
+
 		{{/if}} {{* End of if $item.thread_level==1 *}}
 
 		{{* contact info header for comments *}}

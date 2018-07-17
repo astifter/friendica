@@ -6,8 +6,10 @@
 		    {{$noplugshint}}
 		    </div>
 		{{else}}
-		<a class="btn" href="{{$baseurl}}/admin/{{$function}}?a=r&amp;t={{$form_security_token}}">{{$reload}}</a>
+
+		<a class="btn pluginslist-reload" href="{{$baseurl}}/admin/{{$function}}?a=r&amp;t={{$form_security_token}}">{{$reload}}</a>
 		<ul id='addonslist'>
+
 		{{foreach $addons as $p}}
 			<li class="addon {{$p.1}}">
 				<span class="offset-anchor" id="{{$p.0}}"></span>
